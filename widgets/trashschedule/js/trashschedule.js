@@ -387,9 +387,8 @@ vis.binds['trashschedule'] = {
                             $('<span class="name"></span>').html(trashType.name).appendTo(newItem);
                         }
 
-                        $('<div class="dumpster"></div>').html(trashType.daysLeft).wrapInner('<span class="daysleft"></span>').appendTo(newItem);
+                        $('<div class="dumpster '+trashType.name+'"></div>').html(trashType.daysLeft).wrapInner('<span class="daysleft"></span>').appendTo(newItem);
 						
-						newItem.find('.dumpster').className += ' ' + trashType.name;
                         if (showDate) {
                             $('<span class="nextdate"></span>').html(new Date(trashType.nextDate).toLocaleDateString(dateLocale, dateOptions)).appendTo(newItem);
                         }
