@@ -392,6 +392,7 @@ vis.binds['trashschedule'] = {
                         if (showDate) {
                             $('<span class="nextdate"></span>').html(new Date(trashType.nextDate).toLocaleDateString(dateLocale, dateOptions)).appendTo(newItem);
                         }
+						newItem.addClass(trashType.name);
 
                         if (trashType._color) {
                             newItem.find('.dumpster').css('background-image', vis.binds['trashschedule'].getBackgroundImage(trashType._color));
