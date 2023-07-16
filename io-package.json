@@ -1,9 +1,9 @@
 {
   "common": {
     "name": "trashschedule",
-    "version": "2.2.2",
+    "version": "2.2.3",
     "news": {
-      "2.2.2": {
+      "2.2.3": {
         "en": "Added completed flag for types",
         "de": "Erweiterte Flagge für Typen hinzugefügt",
         "ru": "Добавлен заполненный флаг для типов",
