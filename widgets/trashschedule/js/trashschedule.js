@@ -170,7 +170,7 @@ $.extend(
 );
 
 vis.binds['trashschedule'] = {
-    version: '2.2.5',
+    version: '2.2.6',
     showVersion: function () {
         if (vis.binds['trashschedule'].version) {
             console.log('Version trashschedule: ' + vis.binds['trashschedule'].version);
@@ -389,7 +389,7 @@ vis.binds['trashschedule'] = {
 
                         $('<div class="dumpster"></div>').html(trashType.daysLeft).wrapInner('<span class="daysleft"></span>').appendTo(newItem);
 						
-						newItem.find('.dumpster').classList.add(trashType.name);
+						newItem.find('.dumpster').className += ' ' + trashType.name;
                         if (showDate) {
                             $('<span class="nextdate"></span>').html(new Date(trashType.nextDate).toLocaleDateString(dateLocale, dateOptions)).appendTo(newItem);
                         }
