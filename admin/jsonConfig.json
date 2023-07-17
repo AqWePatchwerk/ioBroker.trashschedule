@@ -67,7 +67,7 @@
                         {
                             "type": "text",
                             "attr": "name",
-                            "width": "35%",
+                            "width": "30%",
                             "title": {
                                 "en": "Name",
                                 "de": "Name",
@@ -89,7 +89,7 @@
                             "type": "text",
                             "trim": false,
                             "attr": "match",
-                            "width": "35%",
+                            "width": "30%",
                             "title": {
                                 "en": "Applies to appointments",
                                 "de": "Gilt für Termine",
@@ -169,6 +169,27 @@
                             "filter": false,
                             "sort": false,
                             "default": "#000000"
+                        },
+                        {
+                            "type": "checkbox",
+                            "attr": "adjustCss",
+                            "width": "10%",
+                            "title": {
+                                "en": "adjustCss",
+                                "de": "Css anpassen",
+                                "ru": "xxx",
+                                "pt": "xxx",
+                                "nl": "xxx",
+                                "fr": "xxx",
+                                "it": "xxx",
+                                "es": "xxx",
+                                "pl": "xxx",
+                                "uk": "xxx",
+                                "zh-cn": "xxx"
+                            },
+                            "filter": false,
+                            "sort": false,
+                            "default": false
                         }
                     ]
                 },

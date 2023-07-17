@@ -60,7 +60,7 @@ iobroker add trashschedule
 
 * (klein0r) Improved log messages
 
-### 2.2.9 (2023-01-16)
+### 2.3.0 (2023-01-16)
 
 * (klein0r) Added completed flag for types
 
