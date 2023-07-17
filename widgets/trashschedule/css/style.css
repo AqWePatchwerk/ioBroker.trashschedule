@@ -40,6 +40,23 @@
     background: #CCCCCC55;
 }
 
+.trashtype .daysleftHWR {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    margin-left: -25px;
+    font-weight: bold;
+    font-size: 1.5em;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    border-radius: 20px;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    text-align: center;
+    background: #CCCCCC55;
+}
+
 .trashtype .nextdate {
     font-size: 0.8em;
     text-align: center;
