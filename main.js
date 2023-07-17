@@ -567,6 +567,7 @@ class Trashschedule extends utils.Adapter {
                                         await this.setStateChangedAsync(`type.${trashNameClean}.daysLeft`, { val: dayDiff, ack: true, c: this.config.ical });
                                         await this.setStateChangedAsync(`type.${trashNameClean}.nextDateFound`, { val: true, ack: true });
                                         await this.setStateChangedAsync(`type.${trashNameClean}.color`, { val: trashType.color, ack: true });
+										await this.setStateChangedAsync(`type.${trashNameClean}.adjustCss`, { val: trashType.adjustCss, ack: true });
 
                                         // Do not store objects as value
                                         if (typeof entry._section !== 'object') {
@@ -582,6 +583,7 @@ class Trashschedule extends utils.Adapter {
                                             _completed: isCompletedState ? isCompletedState.val : false,
                                             _description: entry._section,
                                             _color: trashType.color,
+											_adjustCss: trashType.adjustCss,
                                         });
 
                                         this.log.debug(`(4) filled type: "${trashName}"`);

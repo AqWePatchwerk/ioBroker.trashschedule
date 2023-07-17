@@ -387,7 +387,7 @@ vis.binds['trashschedule'] = {
                             $('<span class="name"></span>').html(trashType.name).appendTo(newItem);
                         }
 						
-						if (trashType.adjustCss) {
+						if (trashType._adjustCss) {
 							$('<div class="dumpster '+trashType.name+'"></div>').html(trashType.daysLeft).wrapInner('<span class="daysleftHWR"></span>').appendTo(newItem);
 						} else{
 							$('<div class="dumpster"></div>').html(trashType.daysLeft).wrapInner('<span class="daysleft"></span>').appendTo(newItem);							
