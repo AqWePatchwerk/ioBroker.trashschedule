@@ -384,7 +384,11 @@ vis.binds['trashschedule'] = {
                         }
 
                         if (showName) {
-                            $('<span class="name"></span>').html(trashType.name).appendTo(newItem);
+							if (trashType._adjustCss) {
+								$('<span class="nameHWR"></span>').html(trashType.name).appendTo(newItem);
+							} else{
+								$('<span class="name"></span>').html(trashType.name).appendTo(newItem);
+							}
                         }
 						
 						if (trashType._adjustCss) {
