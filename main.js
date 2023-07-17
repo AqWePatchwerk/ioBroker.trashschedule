@@ -247,6 +247,31 @@ class Trashschedule extends utils.Adapter {
                         },
                         native: {},
                     });
+					
+                    await this.setObjectNotExistsAsync(`type.${trashNameClean}.adjustCss`, {
+                        type: 'state',
+                        common: {
+                            name: {
+                                en: 'adjustCss (' + trashName + ')',
+                                de: 'NadjustCss (' + trashName + ')',
+                                ru: 'Следующий пикап - дата нахождения (' + trashName + ')',
+                                pt: 'Próxima coleta - data encontrada (' + trashName + ')',
+                                nl: 'Volgende afhaling - datum gevonden (' + trashName + ')',
+                                fr: 'Prochain ramassage - date trouvée (' + trashName + ')',
+                                it: 'Prossimo ritiro - data trovata (' + trashName + ')',
+                                es: 'Próxima recogida: fecha encontrada (' + trashName + ')',
+                                pl: 'Następny odbiór — znaleziono datę (' + trashName + ')',
+                                uk: 'Наступний пікап - дата знайдено (' + trashName + ')',
+                                'zh-cn': '下次取件 - 找到日期 (' + trashName + ')',
+                            },
+                            type: 'boolean',
+                            role: 'indicator',
+                            def: false,
+                            read: true,
+                            write: false,
+                        },
+                        native: {},
+                    });					
 
                     await this.setObjectNotExistsAsync(`type.${trashNameClean}.color`, {
                         type: 'state',
