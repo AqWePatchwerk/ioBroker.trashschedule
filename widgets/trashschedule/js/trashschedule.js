@@ -383,18 +383,12 @@ vis.binds['trashschedule'] = {
                             newItem.addClass('trash-glow');
                         }
 
-                        if (showName) {
-							if (trashType._adjustCss) {
-								$('<div class="nameHWR"></div>').html(trashType.name).appendTo(newItem);
-							} else{
-								$('<span class="name"></span>').html(trashType.name).appendTo(newItem);
-							}
-                        }
+
 						
 						if (trashType._adjustCss) {
-							$('<div class="dumpster '+trashType.name+'"></div>').html(trashType.daysLeft).wrapInner('<span class="daysleftHWR"></span>').appendTo(newItem);
+							$('<div class="dumpster '+trashType.name+'"></div>').html(trashType.daysLeft).wrapInner('<span class="daysleftHWR"></span>').html(trashType.name).wrapInner('<span class="nameHWR"></span>').appendTo(newItem);
 						} else{
-							$('<div class="dumpster"></div>').html(trashType.daysLeft).wrapInner('<span class="daysleft"></span>').appendTo(newItem);							
+							$('<div class="dumpster"></div>').html(trashType.daysLeft).wrapInner('<span class="daysleft"></span>').html(trashType.name).wrapInner('<span class="name"></span>').appendTo(newItem);							
 						}
                         if (showDate) {
                             $('<span class="nextdate"></span>').html(new Date(trashType.nextDate).toLocaleDateString(dateLocale, dateOptions)).appendTo(newItem);
