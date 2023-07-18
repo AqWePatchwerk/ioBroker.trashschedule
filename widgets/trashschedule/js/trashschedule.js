@@ -369,47 +369,66 @@ vis.binds['trashschedule'] = {
 
                 if (!trashType._completed) {
                     if (limit === 0 || rendered < limit) {
-                        var newItem = $('<div class="trashtype"></div>');
-						var dumpster = $('<div class="XXX"></div>');
 						if (trashType._adjustCss) {
-							dumpster = $('<div class="dumpster '+trashType.name+'"></div>');
-						} else{
-							dumpster = $('<div class="dumpster"></div>');							
-						}						
+							var newItem = $('<div class="trashtype"></div>');
+							var dumpster = $('<div class="dumpster '+trashType.name+'"></div>');
 
-
-                        if (trashType.daysLeft == 1) {
-                            newItem.addClass('trash-tomorrow');
-                        }
-
-                        if (trashType.daysLeft == 0) {
-                            newItem.addClass('trash-today');
-                        }
-
-                        if (glow && trashType.daysLeft <= glowLimit) {
-                            newItem.addClass('trash-glow');
-                        }
-						
-						if (trashType._adjustCss) {
-							$('<span class="daysleftHWR"></span>').html(trashType.daysLeft).appendTo(dumpster);
-						} else{
-							$('<span class="daysleft"></span>').html(trashType.daysLeft).appendTo(dumpster);						
-						}
-						if (showName) {
-							if (trashType._adjustCss) {
-								$('<span class="nameHWR"></span>').html(trashType.name).appendTo(dumpster);
-							} else{
-								$('<span class="name"></span>').html(trashType.name).appendTo(dumpster);
+							if (trashType.daysLeft == 1) {
+								newItem.addClass('trash-tomorrow');
 							}
-                        }
-						dumpster.appendTo(newItem);
-                        if (showDate) {
-                            $('<span class="nextdate"></span>').html(new Date(trashType.nextDate).toLocaleDateString(dateLocale, dateOptions)).appendTo(newItem);
-                        }
-	
-                        if (trashType._color) {
-                            newItem.find('.dumpster').css('background-image', vis.binds['trashschedule'].getBackgroundImage(trashType._color));
-                        }
+
+							if (trashType.daysLeft == 0) {
+								newItem.addClass('trash-today');
+							}
+
+							if (glow && trashType.daysLeft <= glowLimit) {
+								newItem.addClass('trash-glow');
+							}
+							
+							$('<span class="daysleftHWR"></span>').html(trashType.daysLeft).appendTo(dumpster);
+
+							if (showName) {
+								$('<span class="nameHWR"></span>').html(trashType.name).appendTo(dumpster);
+							}
+							dumpster.appendTo(newItem);
+							if (showDate) {
+								$('<span class="nextdate"></span>').html(new Date(trashType.nextDate).toLocaleDateString(dateLocale, dateOptions)).appendTo(newItem);
+							}
+		
+							if (trashType._color) {
+								newItem.find('.dumpster').css('background-image', vis.binds['trashschedule'].getBackgroundImage(trashType._color));
+							}
+						}
+						else{
+							
+							var newItem = $('<div class="trashtype"></div>');
+							
+							if (trashType.daysLeft == 1) {
+								newItem.addClass('trash-tomorrow');
+							}
+
+							if (trashType.daysLeft == 0) {
+								newItem.addClass('trash-today');
+							}
+
+							if (glow && trashType.daysLeft <= glowLimit) {
+								newItem.addClass('trash-glow');
+							}
+
+							if (showName) {
+								$('<span class="name"></span>').html(trashType.name).appendTo(newItem);
+							}
+							
+							$('<div class="dumpster"></div>').html(trashType.daysLeft).wrapInner('<span class="daysleft"></span>').appendTo(newItem);							
+							
+							if (showDate) {
+								$('<span class="nextdate"></span>').html(new Date(trashType.nextDate).toLocaleDateString(dateLocale, dateOptions)).appendTo(newItem);
+							}
+		
+							if (trashType._color) {
+								newItem.find('.dumpster').css('background-image', vis.binds['trashschedule'].getBackgroundImage(trashType._color));
+							}
+						}
 
                         target.append(newItem);
                         rendered++;
