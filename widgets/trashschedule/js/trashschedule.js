@@ -370,6 +370,12 @@ vis.binds['trashschedule'] = {
                 if (!trashType._completed) {
                     if (limit === 0 || rendered < limit) {
                         var newItem = $('<div class="trashtype"></div>');
+						if (trashType._adjustCss) {
+							var dumpster = $('<div class="dumpster '+trashType.name+'"></div>');
+						} else{
+							var dumpster = $('<div class="dumpster"></div>');							
+						}						
+
 
                         if (trashType.daysLeft == 1) {
                             newItem.addClass('trash-tomorrow');
@@ -382,14 +388,19 @@ vis.binds['trashschedule'] = {
                         if (glow && trashType.daysLeft <= glowLimit) {
                             newItem.addClass('trash-glow');
                         }
-
-
 						
 						if (trashType._adjustCss) {
-							$('<div class="dumpster '+trashType.name+'"></div>').html(trashType.daysLeft).wrapInner('<span class="daysleftHWR"></span>').html(trashType.name).wrapInner('<span class="nameHWR"></span>').appendTo(newItem);
+							$('<span class="daysleftHWR"></span>').html(trashType.daysLeft).appendTo(dumpster);
 						} else{
-							$('<div class="dumpster"></div>').html(trashType.daysLeft).wrapInner('<span class="daysleft"></span>').html(trashType.name).wrapInner('<span class="name"></span>').appendTo(newItem);							
+							$('<span class="daysleft"></span>').html(trashType.daysLeft).appendTo(dumpster);						
 						}
+						if (showName) {
+							if (trashType._adjustCss) {
+								$('<span class="nameHWR"></span>').html(trashType.name).appendTo(dumpster);
+							} else{
+								$('<span class="name"></span>').html(trashType.name).appendTo(dumpster);
+							}
+                        }
                         if (showDate) {
                             $('<span class="nextdate"></span>').html(new Date(trashType.nextDate).toLocaleDateString(dateLocale, dateOptions)).appendTo(newItem);
                         }
