@@ -370,10 +370,11 @@ vis.binds['trashschedule'] = {
                 if (!trashType._completed) {
                     if (limit === 0 || rendered < limit) {
                         var newItem = $('<div class="trashtype"></div>');
+						var dumpster = $('<div class="XXX"></div>');
 						if (trashType._adjustCss) {
-							var dumpster = $('<div class="dumpster '+trashType.name+'"></div>');
+							dumpster = $('<div class="dumpster '+trashType.name+'"></div>');
 						} else{
-							var dumpster = $('<div class="dumpster"></div>');							
+							dumpster = $('<div class="dumpster"></div>');							
 						}						
 
 
@@ -401,6 +402,7 @@ vis.binds['trashschedule'] = {
 								$('<span class="name"></span>').html(trashType.name).appendTo(dumpster);
 							}
                         }
+						dumpster.appendTo(newItem);
                         if (showDate) {
                             $('<span class="nextdate"></span>').html(new Date(trashType.nextDate).toLocaleDateString(dateLocale, dateOptions)).appendTo(newItem);
                         }
