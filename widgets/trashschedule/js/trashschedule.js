@@ -370,7 +370,7 @@ vis.binds['trashschedule'] = {
                 if (!trashType._completed) {
                     if (limit === 0 || rendered < limit) {
 						if (trashType._adjustCss) {
-							var newItem = $('<div class="trashtype"></div>');
+							var newItem = $('<div class="trashtypeHWR"></div>');
 							var dumpster = $('<div class="dumpster '+trashType.name+'"></div>');
 
 							if (trashType.daysLeft == 1) {
